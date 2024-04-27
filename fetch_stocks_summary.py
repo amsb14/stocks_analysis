@@ -20,6 +20,8 @@ def fetch_stock_data(ticker_symbol):
             'Company Name': info.get('shortName', 'N/A'),
             'Industry': info.get('industry', 'N/A'),
             'Sector': info.get('sector', 'N/A'),
+            'Recent Price': info.get('currentPrice'),
+            'EPS': info.get('forwardEps'),
             'P/E Ratio': info.get('forwardPE'),
             'P/B Ratio': info.get('priceToBook'),
             'EV/EBITDA': info.get('enterpriseToEbitda'),
@@ -52,7 +54,7 @@ def fetch_summary(stocks):
     
     # Convert the list of data to a pandas DataFrame and specify the columns order
     df = pd.DataFrame(data)
-    columns_order = ['Ticker', 'Company Name', 'Industry', 'Sector', 'P/E Ratio', 'P/B Ratio', 
+    columns_order = ['Ticker', 'Company Name', 'Industry', 'Sector', 'Recent Price', 'EPS', 'P/E Ratio', 'P/B Ratio', 
                      'EV/EBITDA', 'P/S Ratio', 'ROE', 'ROA', 'Gross Margin', 'Operating Margin', 
                      'Net Margin', 'Debt-to-Equity Ratio', 'Current Ratio', 'Quick Ratio', 
                      'Free Cash Flow', 'Operating Cash Flow', 'Dividend Yield', 'Dividend Payout Ratio']
