@@ -77,6 +77,13 @@ def get_prices(ticker):
         else:
             last_dividend = "N/A"
             last_dividend_date = "N/A"
+            
+        # Safely get Dividend Yield
+        dividend_yield = stock_info.get("dividendYield")
+        if dividend_yield is not None:
+            dividend_yield = f"{dividend_yield * 100:.2f}%"
+        else:
+            dividend_yield = "N/A"
         
         # Determine dates for recent, 12 weeks ago, 24 weeks ago, and 1 year ago adjusted for weekend
         today = datetime.today().date()
@@ -134,6 +141,7 @@ def get_prices(ticker):
         'Dividend Continuity': dividend_continuity,
         'Last Dividend': last_dividend if last_dividend != "N/A" else "N/A",
         'Last Dividend Date': last_dividend_date if last_dividend_date != "N/A" else "N/A",
+        'Dividend Yield': dividend_yield,
         }
 
     except Exception as e:
