@@ -119,7 +119,7 @@ def get_prices(ticker):
     
     
         
-        
+         
         return {
         'Ticker': ticker,
         'Name': name,

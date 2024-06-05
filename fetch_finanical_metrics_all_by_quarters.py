@@ -7,7 +7,7 @@ def fetch_and_transform_financials(ticker):
     and returns a single DataFrame with one row per quarter and metrics as columns.
     """
     stock = yf.Ticker(ticker)
-    # Fetch quarterly financial statements
+    # Fetch quarterly financial statements 
     income_stmt = stock.quarterly_income_stmt
     balance_sheet = stock.quarterly_balance_sheet
     cash_flow = stock.quarterly_cash_flow

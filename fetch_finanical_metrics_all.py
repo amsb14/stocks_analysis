@@ -15,7 +15,7 @@ def fetch_and_transform_financials(ticker):
 
         # Extract the company info
         info = stock.info
-        company_info = {
+        company_info = { 
             'Ticker Symbol': ticker,
             'Company Name': info.get('shortName', 'N/A'),
             'Industry': info.get('industry', 'N/A'),
